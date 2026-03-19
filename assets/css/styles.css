@@ -1,0 +1,17 @@
+/* Custom brand colors based on your wireframe */
+        .brand-green { color: #329623; }
+        .bg-brand-green { background-color: #329623; }
+        /* NEW BRAND ORANGE [cite: 3] */
+        .text-brand-orange { color: #f7941e; }
+        
+        /* CUSTOM ICON SIZING */
+        /* Since <i> tags are inline, we set them to flex/block to respect width/height */
+        .custom-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 85px;
+            width: 100px;
+            font-size: 3rem; /* Adjusts the actual icon size inside the 100x85 box */
+        }
+        #mobile-menu { transition: all 0.3s ease-in-out; }

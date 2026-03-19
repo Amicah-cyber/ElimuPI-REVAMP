@@ -1,0 +1,35 @@
+<nav class="bg-white shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <div class="w-30 h-10 flex tracking-tight">
+         <img src="assets/images/elimupi_c.png" alt="Main Graphic" class="">
+    </div>
+
+    <div class="hidden md:flex space-x-8 text-md font-semibold brand-green">
+        <a href="index.html" class="hover:text-gray-600 transition-colors"><i class="far fa-home" aria-hidden="true"></i></a>
+        <a href="library.html" class="hover:text-gray-600 transition-colors">Learning Resources</a>
+        <a href="coding-lab.html" class="hover:text-gray-600 transition-colors">Coding & Robotics Lab</a>
+        <a href="competencies.html" class="hover:text-gray-600 transition-colors">CBC Competencies</a>
+        <a href="teachers.html" class="hover:text-gray-600 transition-colors">Teaching Support</a>
+        <a href="support.php" class="hover:text-gray-600 transition-colors"><i class="far fa-question-circle" aria-hidden="true"></i></a>
+        <select id="language-selector" style="appearance:auto;border:none">
+				<option value="english">English</option>
+				<option value="swahili">Kiswahili</option>
+		</select>
+        <a href="#" class="hover:text-brand-orange transition-colors"><i class="fa fa-lock" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<div id="mobile-menu" class="hidden bg-white border-b md:hidden flex flex-col p-4 space-y-3 shadow-inner">
+    <a href="library.html" class="brand-green font-medium">Learning Resources</a>
+    <a href="coding-lab.html" class="brand-green font-medium">Coding & Robotics Lab</a>
+    <a href="competencies.html" class="brand-green font-medium">CBC Competencies</a>
+    <a href="teachers.html" class="brand-green font-medium">Teaching Support</a>
+</div>
+

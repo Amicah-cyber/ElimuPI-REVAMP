@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElimuPI - Learning Anywhere</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body class="bg-gray-50">
+
+    <div id="nav-placeholder"></div>
+
+    <main class="container mx-auto px-6 py-12">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">CODING TOOLS</h1> 
+            <p class="text-xl text-gray-600">Learn, teach and create code using simple platforms</p> 
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="bg-white rounded-2xl shadow-sm border p-8 hover:shadow-lg transition">
+                <div class="text-orange-500 text-4xl mb-4"><i class="fa-solid fa-cat"></i></div>
+                <h2 class="text-2xl font-bold mb-2">Scratch</h2>
+                <p class="text-gray-500 mb-6">A block-based coding platform ideal for Grade 1-6 learners.</p>
+                <div class="space-y-3">
+                    <a href="#" class="block w-full text-center py-2 bg-orange-500 text-white rounded-lg font-bold">Visit</a>
+                    <a href="#" class="block w-full text-center py-2 border border-orange-200 text-orange-600 rounded-lg">Tutorials</a>
+                    <a href="#" class="block w-full text-center py-2 border border-orange-200 text-orange-600 rounded-lg">Sample Projects</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border p-8 hover:shadow-lg transition">
+                <div class="text-blue-500 text-4xl mb-4"><i class="fa-solid fa-robot"></i></div>
+                <h2 class="text-2xl font-bold mb-2">Leaphy EasyBloqs</h2>
+                <p class="text-gray-500 mb-6">Block-based robotics & coding at Junior school level.</p>
+                <div class="space-y-3">
+                    <a href="#" class="block w-full text-center py-2 bg-blue-600 text-white rounded-lg font-bold">Visit</a>
+                    <a href="#" class="block w-full text-center py-2 border border-blue-100 text-blue-600 rounded-lg">Tutorials</a>
+                    <a href="#" class="block w-full text-center py-2 border border-blue-100 text-blue-600 rounded-lg">Sample Projects</a>
+                    <a href="#" class="block w-full text-center py-2 border border-blue-100 text-blue-600 rounded-lg">Robot Assembly</a>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border p-8 hover:shadow-lg transition">
+                <div class="text-teal-500 text-4xl mb-4"><i class="fa-solid fa-microchip"></i></div>
+                <h2 class="text-2xl font-bold mb-2">Arduino IDE</h2>
+                <p class="text-gray-500 mb-6">Text-based coding platform for advanced learners.</p>
+                <div class="space-y-3">
+                    <a href="#" class="block w-full text-center py-2 bg-teal-600 text-white rounded-lg font-bold">Visit</a>
+                    <a href="#" class="block w-full text-center py-2 border border-teal-100 text-teal-600 rounded-lg">Sensor Tutorials</a>
+                    <a href="#" class="block w-full text-center py-2 border border-teal-100 text-teal-600 rounded-lg">Sample Projects</a>
+                    <a href="#" class="block w-full text-center py-2 border border-teal-100 text-teal-600 rounded-lg">Sample CSL Projects</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>
+        async function loadComponent(file, elementId, isHead = false) {
+            const response = await fetch(file);
+            const data = await response.text();
+            const element = document.getElementById(elementId);
+            
+            if (isHead) {
+                element.innerHTML = data;
+            } else {
+                element.innerHTML = data;
+            }
+        }
+        // Initialize all parts
+        async function init() {
+            await loadComponent('nav.html', 'nav-placeholder');
+            await loadComponent('footer.html', 'footer-placeholder');
+
+            // Re-bind navigation logic after nav is loaded
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if(btn) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        }
+
+        init();
+    </script>
+</body>
+</html>

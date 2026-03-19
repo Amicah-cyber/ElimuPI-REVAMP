@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElimuPI - Learning Anywhere</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div id="nav-placeholder"></div>
+
+    <section class="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 space-y-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-black-600 leading-tight">
+                Your essential learning library that <span class="brand-green">unlocks learning anywhere</span>, anytime without the internet.
+            </h1>
+        </div>
+        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+            <div class="w-11/12 max-w-2xl flex border-2 border-dashed border-green-300 rounded-lg overflow-hidden">
+                <img src="assets/images/landingpage.jpg" alt="Main Graphic" class="w-full h-60 object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition flex flex-col items-center text-center">
+            <div class="custom-icon text-black-400 mb-4">
+                <i class="fas fa-book"></i>
+            </div>
+            
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Digital Content</h3>
+            
+            <p class="text-gray-500 text-sm mb-6 max-w-xs">
+                Subject-specific resources for all CBE Grade levels.
+            </p>
+            
+            <a href="library.html" class="bg-brand-green text-white px-10 py-3 rounded-lg font-semibold hover:bg-green-600 transition inline-block">
+                Explore &rarr;
+            </a>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition flex flex-col items-center text-center">
+             <div class="custom-icon text-black-400 mb-4">
+                <i class="fas fa-laptop-code" aria-hidden="true"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Coding Tools</h3>
+            <p class="text-gray-500 text-sm mb-6 max-w-xs">Learn, teach and create code using simple platforms.</p>
+            <a href="coding-lab.html" class="bg-brand-green text-white px-10 py-3 rounded-lg font-semibold hover:bg-green-600 transition inline-block">
+                Explore &rarr;
+            </a>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition flex flex-col items-center text-center">
+             <div class="custom-icon text-black-400 mb-4">
+                <i class="fas fa-tasks" aria-hidden="true"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Core Competencies</h3>
+            <p class="text-gray-500 text-sm mb-6 max-w-xs">Practical guides, lesson ideas and projects that nurture core competencies.</p>
+            <a href="competencies.html" class="bg-brand-green text-white px-10 py-3 rounded-lg font-semibold hover:bg-green-600 transition inline-block">
+                Explore &rarr;
+            </a>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition flex flex-col items-center text-center">
+             <div class="custom-icon text-black-400 mb-4">
+                <i class="fas fa-user-graduate" aria-hidden="true"></i>
+            </div>
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Teacher Guides</h3>
+            <p class="text-gray-500 text-sm mb-6 max-w-xs">Editable subject-specific lesson plans and notes for all CBE levels.</p>
+            <a href="teachers.html" class="bg-brand-green text-white px-10 py-3 rounded-lg font-semibold hover:bg-green-600 transition inline-block">
+                Explore &rarr;
+            </a>
+        </div>
+    </section>
+     <div id="footer-placeholder"></div>
+
+    <script>
+        async function loadComponent(file, elementId, isHead = false) {
+            const response = await fetch(file);
+            const data = await response.text();
+            const element = document.getElementById(elementId);
+            
+            if (isHead) {
+                element.innerHTML = data;
+            } else {
+                element.innerHTML = data;
+            }
+        }
+        // Initialize all parts
+        async function init() {
+            await loadComponent('nav.html', 'nav-placeholder');
+            await loadComponent('footer.html', 'footer-placeholder');
+
+            // Re-bind navigation logic after nav is loaded
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if(btn) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        }
+
+        init();
+    </script>
+
+</body>
+</html>
