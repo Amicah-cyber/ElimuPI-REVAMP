@@ -1,9 +1,12 @@
+@import "tailwindcss";
 /* Custom brand colors based on your wireframe */
         .brand-green { color: #329623; }
         .bg-brand-green { background-color: #329623; }
         /* NEW BRAND ORANGE [cite: 3] */
         .text-brand-orange { color: #f7941e; }
-        
+        .bg-brand-orange { background-color: #f7941e; } 
+        .text-brand-blue { color: #2a75c0; }
+        .bg-brand-blue { background-color: #2a75c0; }
         /* CUSTOM ICON SIZING */
         /* Since <i> tags are inline, we set them to flex/block to respect width/height */
         .custom-icon {
